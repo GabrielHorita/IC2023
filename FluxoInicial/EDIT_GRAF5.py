@@ -1,12 +1,18 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import interp1d
+import os
+
+file_dir = os.path.dirname(os.path.realpath(__file__))
+file_path = os.path.join(file_dir, "Graf5.txt")
+
+print(file_path)
 
 x = []
 y = []
 
 
-with open("Graf5.txt", "r") as arquivo:
+with open(file_path, "r") as arquivo:
     linhas = arquivo.readlines()
     for linha in linhas[1:]:
         valores = linha.strip().split()
